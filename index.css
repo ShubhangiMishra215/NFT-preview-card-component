@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+    --blue: hsl(215, 51%, 70%);
+    --hover: hsl(178, 100%, 50%);
+    --hover-image:hsla(178, 100%, 50%, 0.5);
+    --color-bg: hsl(217, 54%, 11%);
+    --color-card-bg: hsl(216, 50%, 16%);
+    --color-text: hsl(217, 16%, 54%);
+    --color-title: hsl(0, 0%, 100%);
+    --color-border:hsl(214, 95%, 7%);
+    --font-base:'Outfit',sans-serif;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--color-bg);
+    font-family: var(--font-base);
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+.card-container{
+    min-height: 100vh;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   padding: 1rem;
+}
+
+
+
+.card{
+    width: clamp(15rem, 85vw, 26rem);
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--color-card-bg);
+    border-radius: 0.8rem;
+    box-shadow: 0rem 1.5rem 1rem 1rem var(--color-border);
+    padding:1.7rem;
+}
+
+.card-image {
+  position: relative;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.nft-img {
+  width: 100%;
+  display: block;
+  border-radius: 0.8rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:var(--hover-image);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  
+}
+
+.card-image:hover .overlay {
+  opacity: 1;
+}
+
+.view-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+
+.card-title{
+    margin-block-start: 1.1rem;
+}
+
+.card-title a{
+    text-decoration: none;
+    
+    font-size:1.5rem;
+    color: var(--color-title);
+    font-weight: 400;
+}
+
+.card-title a:hover {
+    color:var(--hover)
+}
+
+.card-description{
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-block-start: 0.8rem;
+    line-height: 1.6rem;
+}
+
+.card-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.item-left, .item-right{
+    display: flex;
+    gap:0.5rem;
+    margin-block-start: 1.1rem;
+}
+
+.left-text{
+    color:var(--hover);
+}
+
+.right-text{
+    color:var(--color-text)
+}
+
+.footer{
+    border-top: 0.01rem solid var(--color-text);
+    margin-block-start: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.profile-image img{
+    height:2.5rem;
+    width: 2.5rem;
+    border: 0.01rem solid var(--color-title);
+    border-radius: 50%;
+    margin-block-start: 1.1rem;
+}
+
+.username{
+    font-size: 1rem;
+    margin-block-start: 0.6rem;
+    padding:1rem;
+    color:var(--color-text);
+}
+
+.username a{
+    text-decoration: none;
+    color: var(--color-title);
+    font-weight:300;
+}
+
+.username a:hover {
+    color:var(--hover);
+}
+
+.attribution{
+    display: none;
+    
+}
+
+@media (min-width:90rem){
+
+    .card{
+        width: clamp(22rem, 26vw, 28rem)
+    }
+
+    
+}
+
